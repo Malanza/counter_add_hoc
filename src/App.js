@@ -15,24 +15,14 @@ const App = () => {
   }
 
   const resetCount = () => {
-      setCount(0)
+    setCount(0)
   }
 
-  if (count < 10) {
-    return (
-      <>
-        <Count count={count}/>
-        <Counter handleCount={handleCount}/>
-      </>
-    )
-  } else {
-    return (
-      <>
-      <BackButton resetCount={resetCount}/>
-      </>
-    )
-  }
-
+  return (
+    <div className="App">
+    {count < 10 ? <> <Count count={count}/> <Counter handleCount={handleCount}/> </> :<BackButton resetCount={resetCount}/>}
+    </div>
+  );
 }
 
 export default App;
